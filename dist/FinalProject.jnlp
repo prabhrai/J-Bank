@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<jnlp spec="1.0" xmlns:jfx="http://javafx.com" href="FinalProject.jnlp">
+  <information>
+    <title>FinalProject</title>
+    <vendor>jkps</vendor>
+    <description>null</description>
+    <offline-allowed/>
+  </information>
+  <resources>
+    <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
+    <jar href="FinalProject.jar" size="56170" download="eager" />
+    <jar href="lib\charsets.jar" size="3090155" download="eager" />
+    <jar href="lib\deploy.jar" size="5012090" download="eager" />
+    <jar href="lib\javaws.jar" size="940401" download="eager" />
+    <jar href="lib\jce.jar" size="116446" download="eager" />
+    <jar href="lib\jfr.jar" size="560581" download="eager" />
+    <jar href="lib\jfxswt.jar" size="33932" download="eager" />
+    <jar href="lib\jsse.jar" size="636877" download="eager" />
+    <jar href="lib\management-agent.jar" size="381" download="eager" />
+    <jar href="lib\plugin.jar" size="1922800" download="eager" />
+    <jar href="lib\resources.jar" size="3492568" download="eager" />
+    <jar href="lib\rt.jar" size="63327507" download="eager" />
+  </resources>
+  <applet-desc  width="800" height="600" main-class="com.javafx.main.NoJavaFXFallback"  name="FinalProject" >
+    <param name="requiredFXVersion" value="8.0+"/>
+  </applet-desc>
+  <jfx:javafx-desc  width="800" height="600" main-class="finalproject.FinalProject"  name="FinalProject" />
+  <update check="always"/>
+</jnlp>

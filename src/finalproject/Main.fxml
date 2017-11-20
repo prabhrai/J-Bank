@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="finalproject.MainController">
+   <children>
+      <MenuBar layoutY="2.0" prefHeight="31.0" prefWidth="800.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#handleExitButtonAction" text="Exit" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Client">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#handleMnuClients" text="Open Clients" />
+            </items>
+          </Menu>
+            <Menu mnemonicParsing="false" text="Banking">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#handleMnuBanking" text="Open Banking" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="BankingTrans">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#handleMnuBankingTransaction" text="Open Baking Transactions" />
+               </items>
+            </Menu>
+          <Menu mnemonicParsing="false" text="Mortgage">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#handleMnuMortgage" text="Open Mortgage" />
+            </items>
+          </Menu>
+            <Menu mnemonicParsing="false" text="MortgageTrans">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#handleMnuMortgageTransaction" text="Open Mortgage Transaction" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" onAction="#handleMnuPortfolio" text="Open Portfolio">
+               <items>
+                  <MenuItem mnemonicParsing="false" text="Open Portfolio" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="About">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#handleMnuAbout" text="About" />
+               </items>
+            </Menu>
+        </menus>
+      </MenuBar>
+   </children>
+</AnchorPane>

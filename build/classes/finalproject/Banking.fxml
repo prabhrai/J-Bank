@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="finalproject.BankingController">
+    
+   <children>
+      <MenuBar layoutX="10.0" layoutY="12.0" prefHeight="31.0" prefWidth="800.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <menus>
+            <Menu mnemonicParsing="false" text="File">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#handleMnuMain" text="Exit" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Clients">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#handleMnuClients" text="Open Clients" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="BankingTrans">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#handleMnuBankingTransaction" text="Open BankingTrans" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Mortgage">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#handleMnuMortgage" text="Open Mortgage" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="MortgageTrans">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#handleMnuMortgageTransaction" text="Open Mortgage Transaction" />
+               </items>
+            </Menu>
+             <Menu mnemonicParsing="false" onAction="#handleMnuPortfolio" text="Open Portfolio">
+               <items>
+                  <MenuItem mnemonicParsing="false" text="Open Portfolio" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="About">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#handleMnuAbout" text="About" />
+               </items>
+            </Menu>
+         </menus>
+      </MenuBar>
+      <TabPane layoutX="7.0" layoutY="31.0" prefHeight="502.0" prefWidth="792.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="Find Banking">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="401.0" prefWidth="755.0">
+                     <children>
+                        <TextField fx:id="txtBFindSearch" layoutX="329.0" layoutY="31.0" />
+                        <Label layoutX="25.0" layoutY="35.0" text="Enter Account Number or Client ID to search Banking" />
+                        <Button layoutX="25.0" layoutY="80.0" mnemonicParsing="false" onAction="#handleBtnBankingSearch" text="Search" />
+                        <TextArea fx:id="txtBFindResult" layoutX="51.0" layoutY="151.0" prefHeight="227.0" prefWidth="278.0" />
+                        <Button layoutX="277.0" layoutY="80.0" mnemonicParsing="false" onAction="#clearBanking" text="Clear" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab text="Add Banking">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="425.0" prefWidth="668.0">
+                     <children>
+                        <Label layoutX="33.0" layoutY="47.0" text="Client ID" />
+                        <TextField fx:id="txtAddClientID" layoutX="156.0" layoutY="39.0" />
+                        <Label layoutX="33.0" layoutY="261.0" text="Balance" />
+                        <Label layoutX="33.0" layoutY="97.0" prefHeight="17.0" prefWidth="102.0" text="Bank Name" />
+                        <TextField fx:id="txtAddBankName" layoutX="156.0" layoutY="89.0" />
+                        <Label layoutX="33.0" layoutY="147.0" text="Account Number" />
+                        <TextField fx:id="txtAddAccountNumber" layoutX="156.0" layoutY="139.0" />
+                        <Label layoutX="33.0" layoutY="200.0" text="Account Type" />
+                        <Button layoutX="81.0" layoutY="303.0" mnemonicParsing="false" onAction="#handleBtnBankingAdd" text="Add" />
+                        <Button layoutX="202.0" layoutY="303.0" mnemonicParsing="false" onAction="#clearBanking" text="Clear" />
+                        <TextField fx:id="txtAddBalance" layoutX="156.0" layoutY="257.0" />
+                        <ListView fx:id="lvAccountTypeAdd" layoutX="157.0" layoutY="174.0" prefHeight="70.0" prefWidth="147.0" />
+                        <TextArea fx:id="txtBAddStatus" layoutX="140.0" layoutY="359.0" prefHeight="71.0" prefWidth="302.0" />
+                        <Label layoutX="84.0" layoutY="359.0" text="Status" />
+                     </children></AnchorPane>
+            </content>
+          </Tab>
+            <Tab text="Modify Banking">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TextField fx:id="txtModifySearch" layoutX="230.0" layoutY="21.0" />
+                        <Label layoutX="10.0" layoutY="25.0" text="Enter Accout Number to Modify Record" />
+                        <Button layoutX="471.0" layoutY="21.0" mnemonicParsing="false" onAction="#handleBtnBankingModifySearch" text="Search" />
+                        <Label layoutX="40.0" layoutY="77.0" text="Client ID" />
+                        <TextField fx:id="txtModifyClientID" layoutX="179.0" layoutY="73.0" />
+                        <Label layoutX="42.0" layoutY="284.0" text="Balance" />
+                        <Label layoutX="42.0" layoutY="167.0" prefHeight="17.0" prefWidth="102.0" text="Account Number" />
+                        <TextField fx:id="txtModifyBankName" layoutX="178.0" layoutY="119.0" />
+                        <Label layoutX="43.0" layoutY="123.0" text="Bank Name" />
+                        <TextField fx:id="txtModifyAccountNumber" layoutX="179.0" layoutY="167.0" />
+                        <Label layoutX="42.0" layoutY="216.0" text="Account Type" />
+                        <TextField fx:id="txtModifyBalance" layoutX="178.0" layoutY="280.0" />
+                        <Button layoutX="63.0" layoutY="328.0" mnemonicParsing="false" onAction="#handleBtnBankingModifySubmit" text="Submit" />
+                        <Button layoutX="216.0" layoutY="328.0" mnemonicParsing="false" onAction="#clearBanking" text="Clear" />
+                        <ListView fx:id="lvAccountTypeModify" layoutX="179.0" layoutY="198.0" prefHeight="70.0" prefWidth="147.0" />
+                        <TextArea fx:id="txtBModifyStatus" layoutX="534.0" layoutY="284.0" prefHeight="71.0" prefWidth="242.0" />
+                        <Label layoutX="471.0" layoutY="284.0" text="Status" />
+                     </children></AnchorPane>
+              </content>
+            </Tab>
+            <Tab text="Delete Banking">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TextField fx:id="txtDeleteClientSearch" layoutX="240.0" layoutY="28.0" />
+                        <Label layoutX="26.0" layoutY="32.0" text="Enter Account number to search" />
+                        <Button layoutX="26.0" layoutY="85.0" mnemonicParsing="false" onAction="#handleBtnBankingDeleteSearch" text="Search" />
+                        <TextArea fx:id="txtDeleteClientResult" layoutX="26.0" layoutY="149.0" prefHeight="213.0" prefWidth="277.0" />
+                        <Button layoutX="26.0" layoutY="402.0" mnemonicParsing="false" onAction="#handleBtnBankingDelete" text="Delete" />
+                        <TextArea fx:id="txtBDeleteStatus" layoutX="502.0" layoutY="149.0" prefHeight="71.0" prefWidth="266.0" />
+                        <Label layoutX="436.0" layoutY="149.0" text="Status" />
+                        <Button layoutX="240.0" layoutY="85.0" mnemonicParsing="false" onAction="#handleBtnBankingDeleteSearch" text="Clear" />
+                     </children></AnchorPane>
+              </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+        
+   </children>
+</AnchorPane>

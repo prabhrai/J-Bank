@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="finalproject.MortgageController">
+    <children>
+      <MenuBar layoutX="10.0" layoutY="12.0" prefHeight="31.0" prefWidth="800.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <menus>
+            <Menu mnemonicParsing="false" text="File">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#handleMnuMain" text="Exit" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Clients">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#handleMnuClients" text="Open Clients" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Banking">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#handleMnuBanking" text="Open Banking" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Mortgage">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#handleMnuMortgage" text="Open Mortgage" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="MortgageTrans">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#handleMnuMortgageTransaction" text="Open Mortgage Transaction" />
+               </items>
+            </Menu>
+             <Menu mnemonicParsing="false" onAction="#handleMnuPortfolio" text="Open Portfolio">
+               <items>
+                  <MenuItem mnemonicParsing="false" text="Open Portfolio" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="About">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#handleMnuAbout" text="About" />
+               </items>
+            </Menu>
+         </menus>
+      </MenuBar>
+      <TabPane layoutX="4.0" layoutY="38.0" prefHeight="502.0" prefWidth="792.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="Find Mortgage">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TextField fx:id="txtMSearch" layoutX="51.0" layoutY="60.0" />
+                        <Label layoutX="26.0" layoutY="23.0" text="Enter Client ID or Account Number to search transactions" />
+                        <Button layoutX="51.0" layoutY="107.0" mnemonicParsing="false" onAction="#handleBtnMortgageSearch" prefHeight="25.0" prefWidth="60.0" text="Search" />
+                        <TextArea fx:id="txtMSearchResult" layoutX="51.0" layoutY="151.0" prefHeight="227.0" prefWidth="278.0" />
+                        <Button layoutX="169.0" layoutY="107.0" mnemonicParsing="false" onAction="#clearMortgage" text="Clear" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab text="Add Mortgage">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="425.0" prefWidth="668.0">
+                     <children>
+                        <Label layoutX="36.0" layoutY="241.0" text="Loan Date" />
+                        <Label layoutX="36.0" layoutY="47.0" prefHeight="17.0" prefWidth="102.0" text="Client ID" />
+                        <TextField fx:id="txtMAddClientID" layoutX="179.0" layoutY="43.0" />
+                        <Label layoutX="36.0" layoutY="97.0" text="Bank Name" />
+                        <TextField fx:id="txtMAddBankName" layoutX="179.0" layoutY="93.0" />
+                        <Button layoutX="63.0" layoutY="301.0" mnemonicParsing="false" onAction="#handleBtnMortgageAdd" text="Submit" />
+                        <Button layoutX="191.0" layoutY="301.0" mnemonicParsing="false" onAction="#clearMortgage" text="Clear" />
+                        <DatePicker fx:id="txtBTAddLoanDate" layoutX="179.0" layoutY="237.0" prefHeight="25.0" prefWidth="149.0" />
+                        <TextArea fx:id="txtMAddStatus" layoutX="521.0" layoutY="67.0" prefHeight="103.0" prefWidth="247.0" />
+                        <Label layoutX="463.0" layoutY="67.0" text="Status" />
+                        <Label layoutX="36.0" layoutY="142.0" text="Account Number" />
+                        <TextField fx:id="txtMAddAccountNumber" layoutX="179.0" layoutY="138.0" />
+                        <Label layoutX="36.0" layoutY="194.0" prefWidth="117.0" text="Original Loan Amount" />
+                        <TextField fx:id="txtMAddOriginalLoanAmount" layoutX="179.0" layoutY="190.0" />
+                     </children></AnchorPane>
+            </content>
+          </Tab>
+            <Tab text="Modify Mortgage">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Button layoutX="427.0" layoutY="58.0" mnemonicParsing="false" onAction="#handleBtnMortgageModifySearch" text="Search" />
+                        <Label layoutX="61.0" layoutY="191.0" prefHeight="17.0" prefWidth="130.0" text="Bank Name" />
+                        <TextField fx:id="txtMModifyCiientID" layoutX="225.0" layoutY="139.0" />
+                        <Label layoutX="61.0" layoutY="143.0" text="Client ID" />
+                        <TextField fx:id="txtMModifyBankName" layoutX="226.0" layoutY="187.0" />
+                        <Label layoutX="64.0" layoutY="337.0" prefHeight="17.0" prefWidth="70.0" text="Loan Date" />
+                        <Button layoutX="80.0" layoutY="386.0" mnemonicParsing="false" onAction="#handleBtnMortgageModifySubmit" text="Submit" />
+                        <Button layoutX="281.0" layoutY="386.0" mnemonicParsing="false" onAction="#clearMortgage" text="Clear" />
+                        <DatePicker fx:id="txtMModifyLoanDate" layoutX="228.0" layoutY="333.0" prefHeight="25.0" prefWidth="149.0" />
+                        <TextArea fx:id="txtMModifyStatus" layoutX="509.0" layoutY="139.0" prefHeight="84.0" prefWidth="269.0" />
+                        <Label layoutX="465.0" layoutY="139.0" text="Status" />
+                        <TextField fx:id="txtMModifyClientIDSearch" layoutX="218.0" layoutY="18.0" />
+                        <Label layoutX="74.0" layoutY="22.0" text="Enter Client ID" />
+                        <Label layoutX="74.0" layoutY="62.0" text="Enter Account Number" />
+                        <Label layoutX="61.0" layoutY="241.0" prefHeight="17.0" prefWidth="130.0" text="Account Number" />
+                        <TextField fx:id="txtMModifyAccountNumber" layoutX="226.0" layoutY="237.0" />
+                        <Label layoutX="61.0" layoutY="288.0" prefHeight="17.0" prefWidth="130.0" text="Original Loan Amount" />
+                        <TextField fx:id="txtMModifyOriginalLoanAmount" layoutX="226.0" layoutY="284.0" />
+                        <TextField fx:id="txtMModifyAccoutNumberSearch" layoutX="218.0" layoutY="58.0" />
+                     </children></AnchorPane>
+              </content>
+            </Tab>
+            <Tab text="Delete Mortgage">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TextField fx:id="txtMDeleteClientIDSearch" layoutX="191.0" layoutY="28.0" />
+                        <Label layoutX="52.0" layoutY="32.0" text="Enter Client ID" />
+                        <Button layoutX="26.0" layoutY="143.0" mnemonicParsing="false" onAction="#handleBtnMortgageDeleteSearch" text="Search" />
+                        <TextArea fx:id="txtMDeleteResult" layoutX="26.0" layoutY="194.0" prefHeight="184.0" prefWidth="277.0" />
+                        <Button layoutX="26.0" layoutY="402.0" mnemonicParsing="false" onAction="#handleBtnMortgageDeleteSubmit" text="Delete" />
+                        <Label layoutX="52.0" layoutY="72.0" text="Enter Account Number" />
+                        <TextArea fx:id="txtMDeleteStatus" layoutX="471.0" layoutY="194.0" prefHeight="101.0" prefWidth="304.0" />
+                        <Label layoutX="421.0" layoutY="194.0" text="Status" />
+                        <Button layoutX="260.0" layoutY="143.0" mnemonicParsing="false" onAction="#clearMortgage" text="Clear" />
+                        <TextField fx:id="txtMDeleteAccountNumberSearch" layoutX="191.0" layoutY="68.0" />
+                     </children></AnchorPane>
+              </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+        
+   </children>
+</AnchorPane>
